@@ -27,14 +27,6 @@ const getUserWithEmail = function (email) {
     .then((result) => result.rows[0]) //NULL if user does not exist
     .catch((err) => console.log(err.message));
   };
-  // let resolvedUser = null;
-  // for (const userId in users) {
-  //   const user = users[userId];
-  //   if (user && user.email.toLowerCase() === email.toLowerCase()) {
-  //     resolvedUser = user;
-  //   }
-  // // }
-  // return Promise.resolve(resolvedUser);
 
 /**
  * Get a single user from the database given their id.
@@ -47,22 +39,13 @@ const getUserWithId = function (id) {
   .then((result) => result.rows[0]) 
   .catch((err) => console.log(err.message));
 }
-  // return Promise.resolve(users[id]);
-
-
+ 
 /**
  * Add a new user to the database.
  * @param {{name: string, password: string, email: string}} user
  * @return {Promise<{}>} A promise to the user.
  */
-// const addUser = function (user) {
-//   const userId = Object.keys(users).length + 1;
-//   user.id = userId;
-//   users[userId] = user;
-//   return Promise.resolve(user);
-// };
-
-const addUser = function (name, email, password) {
+const addUser = function (user) {
   return pool
   .query(`
   INSERT INTO users (name, email, password)
