@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  user: 'labber',
+  user: 'Marina',
   password: '123',
   host: 'localhost',
   database: 'lightbnb'
@@ -55,7 +55,7 @@ const addUser = function (user) {
   .catch((err) => console.log(err.message));
 };
 
-console.log(addUser('Add User 2', 'email2@mailemail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'));
+// console.log(addUser('Add User 2', 'email2@mailemail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.'));
 
 /// Reservations
 

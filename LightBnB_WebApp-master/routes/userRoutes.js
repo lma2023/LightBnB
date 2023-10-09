@@ -8,6 +8,7 @@ const router = express.Router();
 router.post("/", (req, res) => {
   const user = req.body;
   user.password = bcrypt.hashSync(user.password, 12);
+  console.log("userpass", user.password);
   database
     .addUser(user)
     .then((user) => {
@@ -34,7 +35,7 @@ router.post("/login", (req, res) => {
     if (!bcrypt.compareSync(password, user.password)) {
       return res.send({ error: "error" });
     }
-
+console.log("user", user)
     req.session.userId = user.id;
     res.send({
       user: {
