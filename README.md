@@ -1,6 +1,6 @@
 # LightBnB
 
-AirBnB clone uses a server-size Javascript to display the information from queries to web pages via SQL queries.
+This AirBnB clone uses a server-size Javascript to display the information from queries to web pages via SQL queries.
 
 # Dependences
 * Node.js
